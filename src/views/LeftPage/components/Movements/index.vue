@@ -12,7 +12,7 @@
       <div class="d-flex jc-center body-box">
         <dv-scroll-board
           :config="config"
-          style="width:5.25rem;height:11.4rem"
+          style="width:5.25rem;height:11.3rem"
         />
       </div>
     </div>
