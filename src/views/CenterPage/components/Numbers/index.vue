@@ -6,7 +6,7 @@
         <div class="detail-item-text">
           <h3>今日新增案件</h3>
           <span>{{ cdata.todayNewCaseNum }}</span>
-          <span class="unit">个</span>
+          <span class="unit">件</span>
         </div>
       </div>
       <div class="detail-list-item">
@@ -14,7 +14,7 @@
         <div class="detail-item-text">
           <h3>今日完结案件</h3>
           <span>{{ cdata.todayFinishCaseNum }}</span>
-          <span class="unit">个</span>
+          <span class="unit">件</span>
         </div>
       </div>
       <div class="detail-list-item">
@@ -30,7 +30,7 @@
         <div class="detail-item-text">
           <h3>进行中案件总数</h3>
           <span>{{ cdata.ingCaseNum }}</span>
-          <span class="unit">个</span>
+          <span class="unit">件</span>
         </div>
       </div>
       <div class="detail-list-item">
@@ -38,7 +38,7 @@
         <div class="detail-item-text">
           <h3>完结案件总数</h3>
           <span>{{ cdata.finishCaseNum }}</span>
-          <span class="unit">个</span>
+          <span class="unit">件</span>
         </div>
       </div>
       <div class="detail-list-item">

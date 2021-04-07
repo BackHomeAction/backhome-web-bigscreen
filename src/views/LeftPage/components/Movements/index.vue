@@ -49,7 +49,7 @@ export default {
             dayjs(ele.time).fromNow()
           ]
         }),
-        rowNum: 12, // 表格行数
+        rowNum: 15, // 表格行数
         headerHeight: 35,
         headerBGC: '#0f1325', // 表头
         oddRowBGC: '#0f1325', // 奇数行
@@ -67,7 +67,7 @@ export default {
 <style lang="scss">
 #movement {
   padding: 0.2rem;
-  height: 5.125rem;
+  height: 11.4rem;
   min-width: 3.75rem;
   border-radius: 0.0625rem;
   .bg-color-black {

@@ -13,3 +13,9 @@ export default {
   components: { Movements }
 }
 </script>
+
+<style lang="scss" scoped>
+.left-page {
+  padding-bottom: 0.15rem;
+}
+</style>

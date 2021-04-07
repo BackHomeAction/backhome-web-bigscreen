@@ -41,7 +41,7 @@
         <div class="body-box">
           <left-page />
           <center-page />
-          <div>right</div>
+          <right-page />
         </div>
       </div>
     </dv-full-screen-container>
@@ -53,11 +53,13 @@ import request from 'ky'
 import { formatTime } from '../utils/index.js'
 import CenterPage from './CenterPage/index.vue'
 import LeftPage from './LeftPage/index.vue'
+import RightPage from './RightPage/index.vue'
 
 export default {
   components: {
     CenterPage,
-    LeftPage
+    LeftPage,
+    RightPage
   },
   data () {
     return {
