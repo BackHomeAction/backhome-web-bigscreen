@@ -4,8 +4,8 @@
     <Echart
       id="bottomLeftChart"
       :options="options"
-      height="9rem"
-      width="100%"
+      height="8.125rem"
+      width="10.625rem"
     />
   </div>
 </template>
@@ -76,7 +76,7 @@ export default {
           tooltip: {
             trigger: 'item',
             formatter: (data) => {
-              return `${data.name}<br>于 ${this.getRelativeTime(data.value[2].lostTime)}走失于${data.value[2].place}`
+              return `${data.name}<br>${this.getRelativeTime(data.value[2].lostTime)}走失于${data.value[2].place}`
             }
           },
           series: [

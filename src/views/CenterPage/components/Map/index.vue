@@ -15,7 +15,7 @@ export default {
         return {
           name: `${item.district}走失老人`,
           value: [item.longitude, item.latitude, item],
-          symbolSize: 3,
+          symbolSize: 6,
           itemStyle: {
             normal: {
               color: '#F58158'

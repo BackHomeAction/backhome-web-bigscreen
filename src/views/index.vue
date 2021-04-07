@@ -39,7 +39,9 @@
         </div>
 
         <div class="body-box">
+          <div>left</div>
           <center-page />
+          <div>right</div>
         </div>
       </div>
     </dv-full-screen-container>
@@ -107,5 +109,12 @@ export default {
   top: 0.7rem;
   text-align: right;
   color: #d5e9ff;
+}
+
+.body-box {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 4fr 2fr;
+  grid-column-gap: 0.5rem;
 }
 </style>
