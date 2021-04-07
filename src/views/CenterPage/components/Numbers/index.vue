@@ -12,8 +12,8 @@
       <div class="detail-list-item">
         <img src="@/assets/images/center-details-data2.png">
         <div class="detail-item-text">
-          <h3>今日新增案件</h3>
-          <span>{{ cdata.todayNewCaseNum }}</span>
+          <h3>今日完结案件</h3>
+          <span>{{ cdata.todayFinishCaseNum }}</span>
           <span class="unit">个</span>
         </div>
       </div>

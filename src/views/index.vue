@@ -39,7 +39,7 @@
         </div>
 
         <div class="body-box">
-          <div>left</div>
+          <left-page />
           <center-page />
           <div>right</div>
         </div>
@@ -52,10 +52,12 @@
 import request from 'ky'
 import { formatTime } from '../utils/index.js'
 import CenterPage from './CenterPage/index.vue'
+import LeftPage from './LeftPage/index.vue'
 
 export default {
   components: {
-    CenterPage
+    CenterPage,
+    LeftPage
   },
   data () {
     return {
@@ -101,7 +103,8 @@ export default {
 
 <style lang="scss">
 @import '../assets/scss/index.scss';
-
+</style>
+<style lang="scss" scoped>
 .timebox {
   font-size: 0.2rem;
   position: absolute;
