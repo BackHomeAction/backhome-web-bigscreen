@@ -1,6 +1,9 @@
 <template>
   <div class="top-areas">
-    <div class="d-flex pt-2 pl-2">
+    <div
+      v-if="cdata.caseTop && cdata.caseTop.length"
+      class="d-flex pt-2 pl-2"
+    >
       <span style="color:#5cd9e8">
         <icon name="chart-bar" />
       </span>
@@ -9,7 +12,10 @@
       </div>
     </div>
     <div class="d-flex jc-center body-box">
-      <chart :cdata="cdata" />
+      <chart
+        v-if="cdata.caseTop && cdata.caseTop.length"
+        :cdata="cdata"
+      />
     </div>
   </div>
 </template>
