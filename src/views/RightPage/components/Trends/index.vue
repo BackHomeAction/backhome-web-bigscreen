@@ -14,11 +14,11 @@
           <div class="title-dis">
             <span>
               平均案发次数(小时):
-              <span class="title-dis-keyword">123 次</span>
+              <span class="title-dis-keyword">{{ averageTimes }} 次</span>
             </span>
             <span>
               案发峰值:
-              <span class="title-dis-keyword">24 次</span>
+              <span class="title-dis-keyword">{{ maxTimes }} 次</span>
             </span>
           </div>
         </div>
@@ -30,16 +30,62 @@
 
 <script>
 import Chart from './chart.vue'
+import dayjs from '@/utils/dayjs'
+
+const HOURS = 24 // 时间维度
 
 export default {
   components: { Chart },
+  data () {
+    return {
+      timeList: [],
+      countList: [],
+      cdata: {}
+    }
+  },
   computed: {
-    cdata () {
-      return {
-        timeList: ['9:00', '12:00', '15:00', '18:00', '21:00', '00:00'],
-        data: [502.84, 205.97, 332.79, 281.55, 398.35, 214.02]
+    data () {
+      return this.$store.state.data.developmentTrend
+    },
+    averageTimes () {
+      return (this.countList.reduce((previous, current) => current + previous, 0) / HOURS).toFixed(2)
+    },
+    maxTimes () {
+      return Math.max(...this.countList)
+    }
+  },
+  watch: {
+    data () {
+      this.generageData()
+    }
+  },
+  mounted () {
+    this.generageData()
+  },
+  methods: {
+    generageData () {
+      this.timeList = []
+      this.countList = []
+      for (let i = 0; i < HOURS; i++) {
+        const now = dayjs()
+        const time = now.hour(now.hour() - i).minute(0).second(0).millisecond(0)
+        this.timeList[i] = time.format('HH:mm')
+        const ele = this.getTimeCount(time)
+        this.countList[i] = ele ? ele.caseNum : 0
       }
-      // return this.$store.state.data
+
+      this.timeList.reverse()
+      this.countList.reverse()
+
+      this.cdata = {
+        timeList: this.timeList,
+        data: this.countList
+      }
+    },
+    getTimeCount (time) {
+      return this.data.find(ele => {
+        return time.isSame(dayjs(ele.time))
+      })
     }
   }
 }

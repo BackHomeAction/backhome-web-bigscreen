@@ -32,7 +32,7 @@ export default {
   watch: {
     cdata: {
       handler (data) {
-        console.log(data)
+        // console.log(data)
         this.options = {
           title: {
             show: false,

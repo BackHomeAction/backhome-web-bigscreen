@@ -8,7 +8,7 @@
         <icon name="chart-bar" />
       </span>
       <div class="d-flex">
-        <span class="fs-xl text mx-2">案发数量 Top5</span>
+        <span class="fs-xl text mx-2">案发排行榜</span>
       </div>
     </div>
     <div class="d-flex jc-center body-box">

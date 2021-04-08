@@ -84,6 +84,7 @@ const trafficOptions = (params) => ({
   yAxis: {
     type: 'value',
     min: 0,
+    minInterval: 1,
     splitLine: {
       show: true,
       lineStyle: {
@@ -176,7 +177,7 @@ export default {
   watch: {
     cdata: {
       handler (data) {
-        console.log(data)
+        // console.log(data)
         this.options = trafficOptions(data)
       },
       immediate: true,

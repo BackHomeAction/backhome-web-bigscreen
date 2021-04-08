@@ -23,7 +23,7 @@ export default {
   watch: {
     cdata: {
       handler (data) {
-        console.log(data)
+        // console.log(data)
         this.options = {
           data: data.caseTop.map(ele => {
             return {
