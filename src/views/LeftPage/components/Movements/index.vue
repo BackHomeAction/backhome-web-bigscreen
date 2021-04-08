@@ -44,7 +44,7 @@ export default {
         header: ['任务 ID', '事件', '时间'],
         data: this.cdata.dynamicList.map(ele => {
           return [
-            ele.id,
+            ele.caseId || '/',
             actionIdToText(ele.actionId),
             dayjs(ele.time).fromNow()
           ]
