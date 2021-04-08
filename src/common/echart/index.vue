@@ -1,14 +1,19 @@
 <template>
-  <div :id="id" :class="className" :style="{ height: height, width: width }" />
+  <div
+    :id="id"
+    :class="className"
+    :style="{ height: height, width: width }"
+  />
 </template>
 
 <script>
 import tdTheme from './theme.json' // 引入默认主题
-import resizeMixins from "@/utils/resizeMixins";
-import '../map/fujian.js'
+import resizeMixins from '@/utils/resizeMixins'
+// import '../map/fujian.js'
+import 'echarts/map/js/china'
 
 export default {
-  name: 'echart',
+  name: 'Echart',
   mixins: [resizeMixins],
   props: {
     className: {
@@ -29,7 +34,7 @@ export default {
     },
     options: {
       type: Object,
-      default: ()=>({})
+      default: () => ({})
     }
   },
   data () {
@@ -47,8 +52,8 @@ export default {
     }
   },
   mounted () {
-    this.$echarts.registerTheme('tdTheme', tdTheme); // 覆盖默认主题
-    this.initChart();
+    this.$echarts.registerTheme('tdTheme', tdTheme) // 覆盖默认主题
+    this.initChart()
   },
   methods: {
     initChart () {
