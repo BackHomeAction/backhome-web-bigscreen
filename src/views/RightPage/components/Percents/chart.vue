@@ -107,7 +107,6 @@ export default {
   watch: {
     cdata: {
       handler (data) {
-        console.log(data)
         this.options = percentOptions(data)
       },
       immediate: true,

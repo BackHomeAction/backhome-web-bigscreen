@@ -23,27 +23,25 @@
 <script>
 import Chart from './chart.vue'
 
-const testData = [
-  {
-    title: '服务质量',
-    number: 90
-  },
-  {
-    title: '交互体验',
-    number: 82
-  },
-  {
-    title: '安全防护',
-    number: 85
-  }
-]
-
 export default {
   components: { Chart },
   computed: {
     cdata () {
-      return testData
-      // return this.$store.state.data
+      const data = this.$store.state.data
+      return [
+        {
+          title: '结案占比',
+          number: data.caseNum ? Math.round(data.finishCaseNum / data.caseNum * 100) : 0
+        },
+        {
+          title: '归档占比',
+          number: data.caseNum ? Math.round(data.overTimeCaseNum / data.caseNum * 100) : 0
+        },
+        {
+          title: '在线志愿者',
+          number: data.registerVolunteerNum ? Math.round(data.onlineVolunteerNum / data.registerVolunteerNum * 100) : 0
+        }
+      ]
     }
   }
 }
